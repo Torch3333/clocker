@@ -12,13 +12,13 @@ Postgresql database.
 ### Manage the environment
 
 To start the environment
-```aidl
+```
 cd env
 ./env up
 ```
 
 To stop and clean up the environment
-```aidl
+```
 cd env
 ./env down
 ```
@@ -38,7 +38,7 @@ Commands:
 #### Available commands
 
 Register a timestamp
-```aidl
+```
 clocker-cli/build/install/clocker-cli/bin/clocker-cli register vincent sapporo
 {
   "date" : "2021-07-08",
