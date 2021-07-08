@@ -9,8 +9,9 @@ import picocli.CommandLine;
 
 @CommandLine.Command(name = "clocker", mixinStandardHelpOptions = true, version = "1.0")
 public class ClockerCli {
+
   public static void main(String[] args) {
-    String[] commandArgs = args.length != 0 ? args : new String[] {"-h"};
+    String[] commandArgs = args.length != 0 ? args : new String[]{"-h"};
     Injector injector = Guice.createInjector(new CommandModule());
     CommandLine commandLine =
         new CommandLine(new ClockerCli())

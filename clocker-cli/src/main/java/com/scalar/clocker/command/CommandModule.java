@@ -17,13 +17,6 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class CommandModule extends AbstractModule {
-  @Provides
-  @Singleton
-  DatabaseConfig provideScalarDbConfig() throws IOException {
-    InputStream ScalarDbProperties =
-        this.getClass().getClassLoader().getResourceAsStream("scalardb.properties");
-    return new DatabaseConfig(ScalarDbProperties);
-  }
 
   @Provides
   @Singleton
@@ -47,6 +40,9 @@ public class CommandModule extends AbstractModule {
 
   @Provides
   @Singleton
+  /**
+   * Used to print POJO as user readable JSON
+   */
   ObjectMapper provideObjectMapper() {
     ObjectMapper objectMapper = new ObjectMapper();
     objectMapper.findAndRegisterModules();

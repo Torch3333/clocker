@@ -9,6 +9,7 @@ import lombok.Value;
 @Value
 @Builder
 public class Timestamp {
+
   public static final String DATE = "date";
   public static final String TIME = "time";
   public static final String USER = "user";

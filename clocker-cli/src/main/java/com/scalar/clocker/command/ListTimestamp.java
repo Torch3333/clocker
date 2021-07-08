@@ -17,7 +17,7 @@ import picocli.CommandLine.Parameters;
     name = ListTimestamp.COMMAND_NAME,
     description = "List registered timestamps for the given date. \n"
         + "Example : list 2021-07-08",
-    mixinStandardHelpOptions=true,
+    mixinStandardHelpOptions = true,
     version = "1.0")
 
 public class ListTimestamp implements Runnable {
@@ -27,7 +27,7 @@ public class ListTimestamp implements Runnable {
   private final TimestampRepository timestampRepository;
   private final ObjectMapper objectMapper;
   @Parameters
-  private  LocalDate date;
+  private LocalDate date;
   @Option(
       names = {"-u", "--user"},
       description = "User name")

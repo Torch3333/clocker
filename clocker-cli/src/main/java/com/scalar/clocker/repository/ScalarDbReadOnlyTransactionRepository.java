@@ -1,7 +1,6 @@
 package com.scalar.clocker.repository;
 
 
-
 import com.scalar.clocker.exception.ObjectAlreadyExistingException;
 import com.scalar.clocker.exception.ObjectNotFoundException;
 import com.scalar.clocker.exception.RepositoryException;
