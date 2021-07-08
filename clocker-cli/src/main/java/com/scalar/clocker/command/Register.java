@@ -13,7 +13,7 @@ import picocli.CommandLine.Parameters;
 @CommandLine.Command(
     name = Register.COMMAND_NAME,
     description = "Register a timestamp.\n"
-        + "Example : register vincent",
+        + "Example : register vincent sapporo",
     mixinStandardHelpOptions = true,
     version = "1.0")
 public class Register implements Runnable {

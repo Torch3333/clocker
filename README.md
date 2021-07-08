@@ -27,13 +27,13 @@ cd env
 ```
 ./clocker-cli/build/install/clocker-cli/bin/clocker-cli
 Usage: clocker [-hV] [COMMAND]
--h, --help      Show this help message and exit.
--V, --version   Print version information and exit.
+  -h, --help      Show this help message and exit.
+  -V, --version   Print version information and exit.
 Commands:
-register  Register a timestamp.
-Example : register vincent
-list      List registered timestamps for the given date.
-Example : list 2021-07-08
+  register  Register a timestamp.
+            Example : register vincent sapporo
+  list      List registered timestamps for the given date.
+            Example : list 2021-07-08
 ```
 #### Available commands
 
