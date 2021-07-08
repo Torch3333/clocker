@@ -1,0 +1,19 @@
+{
+  "clocker.timestamp": {
+    "transaction": true,
+    "partition-key": [
+      "date"
+    ],
+    "clustering-key": [
+      "time",
+      "user"
+    ],
+    "columns": {
+      "date": "TEXT",
+      "time": "TEXT",
+      "user": "TEXT",
+      "location": "TEXT",
+      "created_at" : "BIGINT"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+version: "3.5"
+services:
+  db:
+    image: postgres
+    container_name: "clocker-postgres"
+    restart: always
+    environment:
+      POSTGRES_USER: foo
+      POSTGRES_PASSWORD: pw
+    volumes:
+      - postgresql-data:/var/lib/postgresql/data
+    ports:
+       - "5432:5432"
+
+volumes:
+  postgresql-data:
+

@@ -1,0 +1,47 @@
+#!/bin/bash
+#
+# Script to manage the app environment
+usage="$(basename "$0") [-h] {up|down} -- program to manage the Clocker-cli environment
+  ARGUMENTS:
+    up      start the Clocker-cli environment
+    down    stop the Clocker-cli environment
+
+  OPTIONS
+    -h      print the usage"
+
+BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
+main() {
+  case "$1" in
+  'up')
+    init
+    ;;
+  'down')
+    kill_containers
+    ;;
+  '' | -h)
+    echo "${usage}"
+    ;;
+  *)
+    echo "Unexpected goal ${1}"
+    printf '\n'
+    echo "${usage}"
+    ;;
+  esac
+
+}
+
+init() {
+  echo 'Starting postgresql ...'
+  docker compose -f "$BASEDIR"/docker-compose.yml up -d
+  echo 'Postgresql started'
+
+  echo 'Registering application schema ...'
+  java -jar "$BASEDIR"/scalar-schema-standalone-3.0.0.jar --jdbc -j jdbc:postgresql://localhost:5432/postgres -u foo -p pw -f "$BASEDIR"/schema.json
+  echo 'Schema registered'
+}
+
+kill_containers() {
+  docker compose down -v
+}
+
+main "$*"
